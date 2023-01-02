@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson-5 task Dropdown</title>
+    <link rel="stylesheet" href="bootstrap-4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <header>
+            <nav>
+                <div class="menu-item"><a href="#">Home</a></div>
+                <div class="menu-item"><a href="#">About</a></div>
+                <div class="menu-item"><a href="#">Contact</a></div>
+                <div @click='toogle' class="wrapper-block menu-item"><a href="#">Services<span><i class="fas fa-caret-down"></i></span></a></div>
+                <ul class="wrap-hold" v-if='active'>
+                    <li>Posting a job</li>
+                    <li>Solving errors</li>
+                    <li>Teaching skills</li>
+                </ul>
+            </nav>
+            <div class="inputs">
+                 <input placeholder="Search" type="text">Search</input>
+                 <button class="btn btn-outline-info">Search</button>
+            </div>
+        </header>
+    </div>
+<script src="vue.js"></script>
+<script>
+    new Vue ({
+        el: '#app',
+        data: {
+            active: 0
+        },
+        
+        methods: {
+            toogle() {
+                this.active = !this.active
+            },
+        }
+    });
+</script>
+</body>
+</html>
